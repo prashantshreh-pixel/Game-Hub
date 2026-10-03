@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/GameHub.Api/GameHub.Api.csproj" />
+    <Project Path="src/GameHub.Application/GameHub.Application.csproj" />
+    <Project Path="src/GameHub.Client/GameHub.Client.csproj" />
+    <Project Path="src/GameHub.Domain/GameHub.Domain.csproj" />
+    <Project Path="src/GameHub.Infrastructure/GameHub.Infrastructure.csproj" />
+    <Project Path="src/GameHub.Shared/GameHub.Shared.csproj" />
+  </Folder>
+</Solution>

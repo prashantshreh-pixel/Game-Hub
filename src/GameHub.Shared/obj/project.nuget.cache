@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6JVSLK3HGEc=",
+  "success": true,
+  "projectFilePath": "G:\\Projects\\GameHub\\src\\GameHub.Shared\\GameHub.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\prash\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
