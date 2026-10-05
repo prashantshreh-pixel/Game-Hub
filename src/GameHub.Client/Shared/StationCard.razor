@@ -1,0 +1,14 @@
+<div class="border rounded shadow p-4 bg-white">
+    <h2 class="text-lg font-semibold">Station @StationId</h2>
+    <div class="mt-2">
+        <LiveTimerBadge StartTime="StartTime" />
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public int StationId { get; set; }
+
+    [Parameter]
+    public DateTime? StartTime { get; set; }
+}

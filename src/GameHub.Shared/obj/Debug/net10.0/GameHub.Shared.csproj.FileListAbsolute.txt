@@ -1,0 +1,13 @@
+G:\Projects\GameHub\src\GameHub.Shared\bin\Debug\net10.0\GameHub.Shared.deps.json
+G:\Projects\GameHub\src\GameHub.Shared\bin\Debug\net10.0\GameHub.Shared.dll
+G:\Projects\GameHub\src\GameHub.Shared\bin\Debug\net10.0\GameHub.Shared.pdb
+G:\Projects\GameHub\src\GameHub.Shared\obj\Debug\net10.0\GameHub.Shared.csproj.AssemblyReference.cache
+G:\Projects\GameHub\src\GameHub.Shared\obj\Debug\net10.0\GameHub.Shared.GeneratedMSBuildEditorConfig.editorconfig
+G:\Projects\GameHub\src\GameHub.Shared\obj\Debug\net10.0\GameHub.Shared.AssemblyInfoInputs.cache
+G:\Projects\GameHub\src\GameHub.Shared\obj\Debug\net10.0\GameHub.Shared.AssemblyInfo.cs
+G:\Projects\GameHub\src\GameHub.Shared\obj\Debug\net10.0\GameHub.Shared.csproj.CoreCompileInputs.cache
+G:\Projects\GameHub\src\GameHub.Shared\obj\Debug\net10.0\GameHub.Shared.sourcelink.json
+G:\Projects\GameHub\src\GameHub.Shared\obj\Debug\net10.0\GameHub.Shared.dll
+G:\Projects\GameHub\src\GameHub.Shared\obj\Debug\net10.0\refint\GameHub.Shared.dll
+G:\Projects\GameHub\src\GameHub.Shared\obj\Debug\net10.0\GameHub.Shared.pdb
+G:\Projects\GameHub\src\GameHub.Shared\obj\Debug\net10.0\ref\GameHub.Shared.dll

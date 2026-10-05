@@ -1,41 +1,47 @@
+using GameHub.Api.Hubs;
+using GameHub.Api.Services;
+using GameHub.Application;
+using GameHub.Application.Common.Interfaces;
+using GameHub.Application.Sessions.Commands;
+using GameHub.Application.Stations.Queries;
+using GameHub.Infrastructure.Persistence;
+using GameHub.Infrastructure.Services;
+using MediatR;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// Memory Cache & Dapper
+builder.Services.AddMemoryCache();
+builder.Services.AddSingleton<ICacheService, MemoryCacheService>();
+builder.Services.AddSingleton<IDbConnectionFactory, SqlConnectionFactory>();
+
+// SignalR & Background Seeder
+builder.Services.AddTransient<INotificationService, SignalRNotificationService>();
+builder.Services.AddHostedService<DbSeederHostedService>();
+builder.Services.AddSignalR();
+
+// MediatR & CORS
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
+builder.Services.AddCors(options =>
+    options.AddPolicy("BlazorCors", policy =>
+        policy.SetIsOriginAllowed(_ => true).AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
 app.UseHttpsRedirection();
+app.UseCors("BlazorCors");
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+// ==========================================
+// OPTIMIZED MINIMAL APIs (No Controllers needed)
+// ==========================================
+var api = app.MapGroup("/api");
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+api.MapGet("/stations/floormap", async (IMediator mediator) => 
+    Results.Ok(await mediator.Send(new GetFloorMapQuery())));
+
+api.MapPost("/sessions/start", async (StartSessionCommand command, IMediator mediator) => 
+    Results.Ok(new { SessionId = await mediator.Send(command) }));
+
+app.MapHub<StationHub>("/stationhub");
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

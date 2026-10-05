@@ -1,0 +1,25 @@
+@if (StartTime.HasValue)
+{
+    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+        @Duration.ToString(@"hh\:mm\:ss")
+    </span>
+}
+else
+{
+    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+        Available
+    </span>
+}
+
+@code {
+    [Parameter]
+    public DateTime? StartTime { get; set; }
+
+    private TimeSpan Duration => StartTime.HasValue ? DateTime.Now - StartTime.Value : TimeSpan.Zero;
+    
+    protected override void OnInitialized()
+    {
+        // Setup timer to refresh UI every second
+        var timer = new System.Threading.Timer((_) => InvokeAsync(StateHasChanged), null, 0, 1000);
+    }
+}

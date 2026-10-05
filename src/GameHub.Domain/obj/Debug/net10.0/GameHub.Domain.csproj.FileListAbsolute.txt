@@ -1,0 +1,12 @@
+G:\Projects\GameHub\src\GameHub.Domain\bin\Debug\net10.0\GameHub.Domain.deps.json
+G:\Projects\GameHub\src\GameHub.Domain\bin\Debug\net10.0\GameHub.Domain.dll
+G:\Projects\GameHub\src\GameHub.Domain\bin\Debug\net10.0\GameHub.Domain.pdb
+G:\Projects\GameHub\src\GameHub.Domain\obj\Debug\net10.0\GameHub.Domain.GeneratedMSBuildEditorConfig.editorconfig
+G:\Projects\GameHub\src\GameHub.Domain\obj\Debug\net10.0\GameHub.Domain.AssemblyInfoInputs.cache
+G:\Projects\GameHub\src\GameHub.Domain\obj\Debug\net10.0\GameHub.Domain.AssemblyInfo.cs
+G:\Projects\GameHub\src\GameHub.Domain\obj\Debug\net10.0\GameHub.Domain.csproj.CoreCompileInputs.cache
+G:\Projects\GameHub\src\GameHub.Domain\obj\Debug\net10.0\GameHub.Domain.sourcelink.json
+G:\Projects\GameHub\src\GameHub.Domain\obj\Debug\net10.0\GameHub.Domain.dll
+G:\Projects\GameHub\src\GameHub.Domain\obj\Debug\net10.0\refint\GameHub.Domain.dll
+G:\Projects\GameHub\src\GameHub.Domain\obj\Debug\net10.0\GameHub.Domain.pdb
+G:\Projects\GameHub\src\GameHub.Domain\obj\Debug\net10.0\ref\GameHub.Domain.dll
